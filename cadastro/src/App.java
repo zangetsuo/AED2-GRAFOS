@@ -11,9 +11,11 @@ public class App {
 
         Vertice va= new Vertice("heliopolis", "rua das flores", 20);
         Vertice vb= new Vertice("heliopolis", "rua das flores", 30);
+        Vertice vc = new Vertice("heliopolis", "rua das flores", 60);
 
         grafo.adicionarVertice(va);
         grafo.adicionarVertice(vb);
+        grafo.adicionarVertice(vc);
         grafo.adicionarAresta(va, vb,5);
 
         ArrayList<Aresta> vizinhosDeVa = grafo.obterVizinhos(va);
@@ -27,5 +29,7 @@ public class App {
         System.out.println("Grafo criado com sucesso");
         System.out.println("Quantidade de vizinhos de va: " + vizinhosDeVa.size());        
         System.out.println("peso da conexão :" + vizinhosDeVa.get(0).getPeso());
+        System.out.println("va existe? " + grafo.existeVertice(va));
+        System.out.println("vc existe? " + grafo.existeVertice(vc));
     }
 }

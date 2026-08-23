@@ -18,6 +18,9 @@ public class Grafo {
       Aresta novaAresta = new Aresta(destino, peso); // cria uma nova aresta que leva ao destino e tem o peso (tempo) informado
       adjacencias.get(origem).add(novaAresta); // pega o endereço do vertice origem e adiciona a aresta que leva ao destino
     }
+    public boolean existeVertice(Vertice v){
+      return adjacencias.containsKey(v);
+    }
 
   }
 
