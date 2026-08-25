@@ -3,7 +3,7 @@ public class Vertice {
     private String rua;
     private int numero;
 
-    public Vertice(String bairro, String rua, int numero) {
+    public Vertice(String bairro, String rua, int numero) { // constreutor da classe vertice "assemelhasse com struct em c"
         this.bairro = bairro;
         this.rua = rua;
         this.numero = numero;
@@ -44,5 +44,19 @@ public class Vertice {
     public void setNumero(int numero) {
         this.numero = numero;
     }
-
+    @Override // susbstituimos uma finção nativa do java por essa aqui para verificar se dois vertices são iguais
+    public boolean equals(Object outroObjeto) {
+    if (this == outroObjeto) {
+        return true;
+    }
+    if (!(outroObjeto instanceof Vertice)) {
+        return false;
+    }
+    Vertice outroVertice = (Vertice) outroObjeto; 
+    return this.numero == outroVertice.numero && this.bairro.equals(outroVertice.bairro) && this.rua.equals(outroVertice.rua);
+}
+@Override
+public int hashCode() {
+    return bairro.hashCode() + rua.hashCode() + numero;
+}
 }
