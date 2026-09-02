@@ -34,6 +34,31 @@ System.out.println("Diretório de trabalho atual: " + System.getProperty("user.d
 
         ArrayList<Aresta> vizinhosDoEndereco = grafoDoMapa.obterVizinhos(enderecoTeste);
         System.out.println("Quantidade de vizinhos desse endereco: " + vizinhosDoEndereco.size());
-        System.out.println("Diretório de trabalho atual: " + System.getProperty("user.dir"));
+        System.out.println("\n=== Teste do Dijkstra ===");
+
+        Vertice pizzariaHeliopolis = new Vertice("heliopolis", "praca da pizzaria heliopolis", 1);
+        Vertice pizzariaCentro = new Vertice("centro", "praca da pizzaria centro", 1);
+
+        Vertice cliente = new Vertice("magano", "rua conde da boa vista", 30);
+        Rota rota = Dijkstra.menorCaminho(grafoDoMapa, pizzariaHeliopolis, cliente);
+        System.out.println("Heliopolis -> " + cliente);
+        System.out.println("  " + rota);
+
+        Vertice clienteSemRota = new Vertice("heliopolis", "rua maria candido da silva", 40);
+        Rota semRota = Dijkstra.menorCaminho(grafoDoMapa, pizzariaCentro, clienteSemRota);
+        System.out.println("Centro -> " + clienteSemRota);
+        System.out.println("  existe? " + semRota.existe() + " | tempo: " + semRota.getTempoTotal() + " | caminho: " + semRota.getCaminho().size());
+
+        // uma execucao por pizzaria serve para todos os clientes
+        ResultadoDijkstra deHeliopolis = Dijkstra.calcular(grafoDoMapa, pizzariaHeliopolis);
+        ResultadoDijkstra deCentro = Dijkstra.calcular(grafoDoMapa, pizzariaCentro);
+
+        Vertice clienteComparado = new Vertice("centro", "rua do comercio", 30);
+        System.out.println("Comparacao para " + clienteComparado);
+        System.out.println("  heliopolis: " + deHeliopolis.getTempoAte(clienteComparado) + " min");
+        System.out.println("  centro: " + deCentro.getTempoAte(clienteComparado) + " min");
+
+        System.out.println("Enderecos alcancaveis a partir de heliopolis: " + deHeliopolis.getAlcancaveis().size());
+        System.out.println("Enderecos alcancaveis a partir do centro: " + deCentro.getAlcancaveis().size());
     }
 }

@@ -1,6 +1,7 @@
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Set;
 
 public class Grafo {
     private HashMap<Vertice, ArrayList<Aresta>> adjacencias;
@@ -12,7 +13,11 @@ public class Grafo {
       adjacencias.put(v, new ArrayList<Aresta>()); // cria-se o endereço V no mapa de hashs "hashmap" 
     }                                              // e gera um novo array dentro desse endereço e nesse array armazena a lista de arestas que saem desse vértice
     public ArrayList<Aresta> obterVizinhos(Vertice v) {
-        return adjacencias.get(v);
+        ArrayList<Aresta> vizinhos = adjacencias.get(v);
+        if (vizinhos == null) { // vertice fora do grafo devolve lista vazia em vez de null
+            return new ArrayList<Aresta>();
+        }
+        return vizinhos;
     }
     public void adicionarAresta(Vertice origem, Vertice destino, int peso){
       Aresta novaAresta = new Aresta(destino, peso); // cria uma nova aresta que leva ao destino e tem o peso (tempo) informado
@@ -22,5 +27,8 @@ public class Grafo {
       return adjacencias.containsKey(v);
     }
 
-  }
+    public Set<Vertice> obterVertices(){
+      return adjacencias.keySet();
+    }
 
+  }

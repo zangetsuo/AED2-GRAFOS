@@ -59,4 +59,8 @@ public class Vertice {
 public int hashCode() {
     return bairro.hashCode() + rua.hashCode() + numero;
 }
+@Override
+public String toString() {
+    return rua + ", " + numero + " - " + bairro;
+}
 }
