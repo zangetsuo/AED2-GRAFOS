@@ -7,7 +7,13 @@ public class Rota {
     private int tempoTotal;
     private ArrayList<Vertice> caminho;
 
-    public Rota(Vertice origem, Vertice destino, boolean existe, int tempoTotal, ArrayList<Vertice> caminho) {
+    public Rota(
+        Vertice origem,
+        Vertice destino,
+        boolean existe,
+        int tempoTotal,
+        ArrayList<Vertice> caminho
+    ) {
         this.origem = origem;
         this.destino = destino;
         this.existe = existe;
@@ -38,17 +44,29 @@ public class Rota {
     @Override
     public String toString() {
         if (!existe) {
-            return "Sem rota entre " + origem.getBairro() + " e " + destino.getBairro();
+            return "Sem rota entre "
+                + origem.getBairro()
+                + " e "
+                + destino.getBairro();
         }
+
         StringBuilder sb = new StringBuilder();
         sb.append(tempoTotal).append(" min: ");
+
         for (int i = 0; i < caminho.size(); i++) {
             Vertice v = caminho.get(i);
-            sb.append(v.getRua()).append(", ").append(v.getNumero()).append(" - ").append(v.getBairro());
+
+            sb.append(v.getRua())
+              .append(", ")
+              .append(v.getNumero())
+              .append(" - ")
+              .append(v.getBairro());
+
             if (i < caminho.size() - 1) {
                 sb.append(" -> ");
             }
         }
+
         return sb.toString();
     }
 }
