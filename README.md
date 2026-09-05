@@ -6,6 +6,14 @@ Uma pizzaria tem duas unidades e precisa decidir de qual delas sai cada entrega.
 representa a cidade como um grafo, calcula o menor tempo de cada unidade até o endereço do
 cliente e escolhe a mais rápida entre as que conseguem chegar lá.
 
+## Integrantes
+
+Arthur Lima da Rocha
+
+Diego Rodrigues Figueiredo
+
+Emanuel de Lima Paz
+
 ## O problema
 
 Cada endereço da cidade é um vértice, cada ligação entre dois endereços é uma aresta, e o peso
@@ -74,15 +82,11 @@ V;bairro;rua;numero
 A;bairro origem;rua origem;numero origem;bairro destino;rua destino;numero destino;peso
 ```
 
+O peso é o tempo do trecho em minutos. É o mesmo número que o programa soma ao longo do
+caminho e compara com o prazo de 30 minutos no fim, sem conversão nenhuma no meio. No mapa
+atual os pesos vão de 1 a 8 minutos.
+
 Dentro de uma mesma rua as ligações existem só no sentido crescente da numeração. Por causa
 disso 9 dos 34 endereços não são alcançáveis por nenhuma das duas unidades.
 
 Trocar a cidade é trocar esse arquivo. O código continua igual.
-
-## Integrantes
-
-Arthur Lima da Rocha
-
-Diego Rodrigues Figueiredo
-
-Emanuel de Lima Paz
