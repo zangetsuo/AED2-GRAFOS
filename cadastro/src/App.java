@@ -77,13 +77,29 @@ public class App {
         System.out.println("Tempo do Centro até o cliente: "
                 + tempoCentro + " min");
 
-        Rota rota = Dijkstra.menorCaminho(
-                grafoDoMapa,
-                pizzariaHeliopolis,
-                cliente
-        );
+        System.out.println("\n=== Escolha da pizzaria ===");
 
-        System.out.println("Rota escolhida: " + rota);
+        // registra as duas unidades: o dijkstra roda uma vez para cada uma
+        // e serve para todos os clientes consultados depois
+        EscolhaPizzaria escolha = new EscolhaPizzaria(grafoDoMapa);
+        escolha.adicionarUnidade(pizzariaHeliopolis);
+        escolha.adicionarUnidade(pizzariaCentro);
+
+        Vertice[] clientes = {
+                cliente,
+                new Vertice("centro", "rua do comercio", 30),
+                new Vertice("magano", "rua conde da boa vista", 30),
+                new Vertice("domheldercamara", "rua abdenago revoredo", 10),
+                new Vertice("heliopolis", "rua maria candido da silva", 40)
+        };
+
+        for (int i = 0; i < clientes.length; i++) {
+            Escolha decisao = escolha.escolher(clientes[i]);
+            System.out.println(decisao);
+            if (decisao.foiAtendido()) {
+                System.out.println("    " + decisao.getRota());
+            }
+        }
 
         System.out.println("\n=== Teste com endereços mais distantes ===");
 
