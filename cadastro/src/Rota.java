@@ -3,22 +3,19 @@ import java.util.ArrayList;
 public class Rota {
     private Vertice origem;
     private Vertice destino;
-    private boolean existe;
     private int tempoTotal;
     private ArrayList<Vertice> caminho;
 
-    public Rota(
-        Vertice origem,
-        Vertice destino,
-        boolean existe,
-        int tempoTotal,
-        ArrayList<Vertice> caminho
-    ) {
+    public Rota(Vertice origem, Vertice destino, int tempoTotal, ArrayList<Vertice> caminho) {
         this.origem = origem;
         this.destino = destino;
-        this.existe = existe;
         this.tempoTotal = tempoTotal;
         this.caminho = caminho;
+    }
+
+    // usado quando não existe caminho entre os dois enderecos
+    public static Rota inexistente(Vertice origem, Vertice destino) {
+        return new Rota(origem, destino, -1, new ArrayList<Vertice>());
     }
 
     public Vertice getOrigem() {
@@ -30,7 +27,7 @@ public class Rota {
     }
 
     public boolean existe() {
-        return existe;
+        return tempoTotal >= 0;
     }
 
     public int getTempoTotal() {
@@ -43,30 +40,16 @@ public class Rota {
 
     @Override
     public String toString() {
-        if (!existe) {
-            return "Sem rota entre "
-                + origem.getBairro()
-                + " e "
-                + destino.getBairro();
+        if (!existe()) {
+            return "Sem rota de " + origem + " ate " + destino;
         }
-
-        StringBuilder sb = new StringBuilder();
-        sb.append(tempoTotal).append(" min: ");
-
+        String texto = tempoTotal + " min: ";
         for (int i = 0; i < caminho.size(); i++) {
-            Vertice v = caminho.get(i);
-
-            sb.append(v.getRua())
-              .append(", ")
-              .append(v.getNumero())
-              .append(" - ")
-              .append(v.getBairro());
-
-            if (i < caminho.size() - 1) {
-                sb.append(" -> ");
+            if (i > 0) {
+                texto = texto + " -> ";
             }
+            texto = texto + caminho.get(i);
         }
-
-        return sb.toString();
+        return texto;
     }
 }
