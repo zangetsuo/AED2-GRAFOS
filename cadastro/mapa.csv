@@ -1,0 +1,73 @@
+V;heliopolis;rua cleto campelo;10
+V;heliopolis;rua cleto campelo;20
+V;heliopolis;rua cleto campelo;30
+V;heliopolis;rua cleto campelo;40
+V;heliopolis;rua coelho neto;10
+V;heliopolis;rua coelho neto;20
+V;heliopolis;rua coelho neto;30
+V;heliopolis;rua coelho neto;40
+V;heliopolis;rua conego benigno lira;10
+V;heliopolis;rua conego benigno lira;20
+V;heliopolis;rua conego benigno lira;30
+V;heliopolis;rua conego benigno lira;40
+V;heliopolis;rua maria candido da silva;10
+V;heliopolis;rua maria candido da silva;20
+V;heliopolis;rua maria candido da silva;30
+V;heliopolis;rua maria candido da silva;40
+V;magano;avenida antonio gueiros;10
+V;magano;avenida antonio gueiros;20
+V;magano;avenida antonio gueiros;30
+V;magano;rua conde da boa vista;10
+V;magano;rua conde da boa vista;20
+V;magano;rua conde da boa vista;30
+V;centro;avenida central;10
+V;centro;avenida central;20
+V;centro;avenida central;30
+V;centro;rua do comercio;10
+V;centro;rua do comercio;20
+V;centro;rua do comercio;30
+V;franciscofigueira;rua conceicao cardoso;10
+V;franciscofigueira;rua conceicao cardoso;20
+V;domheldercamara;rua abdenago revoredo;10
+V;domheldercamara;rua abdenago revoredo;20
+V;heliopolis;praca da pizzaria heliopolis;1
+V;centro;praca da pizzaria centro;1
+A;heliopolis;rua cleto campelo;10;heliopolis;rua cleto campelo;20;2
+A;heliopolis;rua cleto campelo;20;heliopolis;rua cleto campelo;30;2
+A;heliopolis;rua cleto campelo;30;heliopolis;rua cleto campelo;40;2
+A;heliopolis;rua coelho neto;10;heliopolis;rua coelho neto;20;2
+A;heliopolis;rua coelho neto;20;heliopolis;rua coelho neto;30;2
+A;heliopolis;rua coelho neto;30;heliopolis;rua coelho neto;40;2
+A;heliopolis;rua conego benigno lira;10;heliopolis;rua conego benigno lira;20;2
+A;heliopolis;rua conego benigno lira;20;heliopolis;rua conego benigno lira;30;2
+A;heliopolis;rua conego benigno lira;30;heliopolis;rua conego benigno lira;40;2
+A;heliopolis;rua maria candido da silva;10;heliopolis;rua maria candido da silva;20;2
+A;heliopolis;rua maria candido da silva;20;heliopolis;rua maria candido da silva;30;2
+A;heliopolis;rua maria candido da silva;30;heliopolis;rua maria candido da silva;40;2
+A;heliopolis;rua cleto campelo;20;heliopolis;rua coelho neto;20;3
+A;heliopolis;rua coelho neto;30;heliopolis;rua conego benigno lira;30;3
+A;heliopolis;rua conego benigno lira;20;heliopolis;rua maria candido da silva;20;3
+A;magano;avenida antonio gueiros;10;magano;avenida antonio gueiros;20;2
+A;magano;avenida antonio gueiros;20;magano;avenida antonio gueiros;30;2
+A;magano;rua conde da boa vista;10;magano;rua conde da boa vista;20;2
+A;magano;rua conde da boa vista;20;magano;rua conde da boa vista;30;2
+A;magano;avenida antonio gueiros;20;magano;rua conde da boa vista;20;3
+A;centro;avenida central;10;centro;avenida central;20;2
+A;centro;avenida central;20;centro;avenida central;30;2
+A;centro;rua do comercio;10;centro;rua do comercio;20;2
+A;centro;rua do comercio;20;centro;rua do comercio;30;2
+A;centro;avenida central;20;centro;rua do comercio;20;3
+A;franciscofigueira;rua conceicao cardoso;10;franciscofigueira;rua conceicao cardoso;20;2
+A;domheldercamara;rua abdenago revoredo;10;domheldercamara;rua abdenago revoredo;20;2
+A;heliopolis;rua cleto campelo;40;centro;avenida central;10;6
+A;centro;avenida central;10;heliopolis;rua cleto campelo;40;6
+A;centro;avenida central;30;magano;avenida antonio gueiros;10;5
+A;magano;avenida antonio gueiros;10;centro;avenida central;30;5
+A;centro;rua do comercio;30;franciscofigueira;rua conceicao cardoso;10;7
+A;franciscofigueira;rua conceicao cardoso;10;centro;rua do comercio;30;7
+A;magano;rua conde da boa vista;30;domheldercamara;rua abdenago revoredo;10;8
+A;domheldercamara;rua abdenago revoredo;10;magano;rua conde da boa vista;30;8
+A;heliopolis;praca da pizzaria heliopolis;1;heliopolis;rua cleto campelo;10;1
+A;heliopolis;rua cleto campelo;10;heliopolis;praca da pizzaria heliopolis;1;1
+A;centro;praca da pizzaria centro;1;centro;avenida central;10;1
+A;centro;avenida central;10;centro;praca da pizzaria centro;1;1
